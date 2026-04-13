@@ -1,0 +1,21 @@
+cat > .gitignore <<'EOF'
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store
+
+# ML artifacts
+ml_core/models/*.pt
+ml_core/data/*.csv
+
+# Optional local artifacts
+*.log
+EOF

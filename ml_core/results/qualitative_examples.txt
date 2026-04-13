@@ -1,0 +1,177 @@
+================================================================================
+QUALITATIVE ANALYSIS - Two-Stage Passage Ranking Examples
+================================================================================
+
+================================================================================
+QUERY 1: "How to prepare for a economics interview?"
+================================================================================
+
+GROUND TRUTH DUPLICATES (1):
+  [RELEVANT] "What is the best way to prepare for economics interviews?"
+
+--- STAGE 1: TF-IDF Retrieval (Top 10) ---
+  Rank 1: [0.7195] [DUPLICATE] "What is the best way to prepare for economics interviews?"
+  Rank 2: [0.5585] [x] "How to find a job in economics?"
+  Rank 3: [0.5585] [x] "How do I get a job in economics?"
+  Rank 4: [0.5212] [x] "What are the top economics frameworks?"
+  Rank 5: [0.5212] [x] "What is the future of economics?"
+  Rank 6: [0.5212] [x] "Which economics certifications should I get?"
+  Rank 7: [0.5212] [x] "What are the drawbacks of economics?"
+  Rank 8: [0.5184] [x] "How do I master economics?"
+  Rank 9: [0.5130] [x] "How much time to learn economics?"
+  Rank 10: [0.4954] [x] "What are the best economics books?"
+
+--- STAGE 2: Cross-Encoder Reranking ---
+  Rank 1: [0.9999] [DUPLICATE] "What is the best way to prepare for economics interviews?"
+  Rank 2: [0.8247] [x] "How do I master economics?"
+  Rank 3: [0.0012] [x] "What are the drawbacks of economics?"
+  Rank 4: [0.0011] [x] "How to find a job in economics?"
+  Rank 5: [0.0003] [x] "How do I get a job in economics?"
+  Rank 6: [0.0002] [x] "What is the future of economics?"
+  Rank 7: [0.0002] [x] "How much time to learn economics?"
+  Rank 8: [0.0002] [x] "Which economics certifications should I get?"
+  Rank 9: [0.0002] [x] "What are the best economics books?"
+  Rank 10: [0.0001] [x] "What are the top economics frameworks?"
+
+  >> Duplicate was at rank 1 after retrieval, moved to rank 1 after reranking
+  >> Same position (already correct)
+
+================================================================================
+QUERY 2: "How to start a career in data engineering?"
+================================================================================
+
+GROUND TRUTH DUPLICATES (1):
+  [RELEVANT] "How do I begin a career in data engineering?"
+
+--- STAGE 1: TF-IDF Retrieval (Top 10) ---
+  Rank 1: [0.8534] [x] "What are the career prospects in data engineering?"
+  Rank 2: [0.8534] [DUPLICATE] "How do I begin a career in data engineering?"
+  Rank 3: [0.7283] [x] "How to find a job in data engineering?"
+  Rank 4: [0.7283] [x] "How do I get a job in data engineering?"
+  Rank 5: [0.6942] [x] "Which data engineering certifications should I get?"
+  Rank 6: [0.6942] [x] "What are the drawbacks of data engineering?"
+  Rank 7: [0.6942] [x] "What are the top data engineering frameworks?"
+  Rank 8: [0.6942] [x] "What is the future of data engineering?"
+  Rank 9: [0.6915] [x] "How do I master data engineering?"
+  Rank 10: [0.6864] [x] "How much time to learn data engineering?"
+
+--- STAGE 2: Cross-Encoder Reranking ---
+  Rank 1: [0.9999] [DUPLICATE] "How do I begin a career in data engineering?"
+  Rank 2: [0.8822] [x] "What are the career prospects in data engineering?"
+  Rank 3: [0.4507] [x] "How to find a job in data engineering?"
+  Rank 4: [0.1869] [x] "How do I master data engineering?"
+  Rank 5: [0.0360] [x] "How do I get a job in data engineering?"
+  Rank 6: [0.0003] [x] "What are the drawbacks of data engineering?"
+  Rank 7: [0.0002] [x] "How much time to learn data engineering?"
+  Rank 8: [0.0002] [x] "What is the future of data engineering?"
+  Rank 9: [0.0002] [x] "Which data engineering certifications should I get?"
+  Rank 10: [0.0001] [x] "What are the top data engineering frameworks?"
+
+  >> Duplicate was at rank 2 after retrieval, moved to rank 1 after reranking
+  >> IMPROVED by 1 positions!
+
+================================================================================
+QUERY 3: "Is real estate worth learning in 2025?"
+================================================================================
+
+GROUND TRUTH DUPLICATES (1):
+  [RELEVANT] "Should I learn real estate in 2025?"
+
+--- STAGE 1: TF-IDF Retrieval (Top 10) ---
+  Rank 1: [0.8883] [x] "Is real estate worth learning?"
+  Rank 2: [0.7817] [DUPLICATE] "Should I learn real estate in 2025?"
+  Rank 3: [0.5911] [x] "How do I get a job in real estate?"
+  Rank 4: [0.5911] [x] "How to find a job in real estate?"
+  Rank 5: [0.5781] [x] "What mistakes should I avoid when learning real estate?"
+  Rank 6: [0.5656] [x] "Which real estate certifications should I get?"
+  Rank 7: [0.5656] [x] "What are the drawbacks of real estate?"
+  Rank 8: [0.5656] [x] "What are the top real estate frameworks?"
+  Rank 9: [0.5656] [x] "What is the future of real estate?"
+  Rank 10: [0.5636] [x] "How do I master real estate?"
+
+--- STAGE 2: Cross-Encoder Reranking ---
+  Rank 1: [0.9999] [DUPLICATE] "Should I learn real estate in 2025?"
+  Rank 2: [0.0342] [x] "Is real estate worth learning?"
+  Rank 3: [0.0002] [x] "How do I master real estate?"
+  Rank 4: [0.0002] [x] "What is the future of real estate?"
+  Rank 5: [0.0002] [x] "What mistakes should I avoid when learning real estate?"
+  Rank 6: [0.0002] [x] "What are the drawbacks of real estate?"
+  Rank 7: [0.0001] [x] "How do I get a job in real estate?"
+  Rank 8: [0.0001] [x] "How to find a job in real estate?"
+  Rank 9: [0.0001] [x] "Which real estate certifications should I get?"
+  Rank 10: [0.0001] [x] "What are the top real estate frameworks?"
+
+  >> Duplicate was at rank 2 after retrieval, moved to rank 1 after reranking
+  >> IMPROVED by 1 positions!
+
+================================================================================
+QUERY 4: "How to become an expert in machine learning?"
+================================================================================
+
+GROUND TRUTH DUPLICATES (1):
+  [RELEVANT] "How do I master machine learning?"
+
+--- STAGE 1: TF-IDF Retrieval (Top 10) ---
+  Rank 1: [0.8325] [x] "How to find a job in machine learning?"
+  Rank 2: [0.8325] [x] "How do I get a job in machine learning?"
+  Rank 3: [0.8247] [x] "Is machine learning worth learning?"
+  Rank 4: [0.7889] [x] "Which machine learning certifications should I get?"
+  Rank 5: [0.7889] [x] "What are the drawbacks of machine learning?"
+  Rank 6: [0.7889] [x] "What are the top machine learning frameworks?"
+  Rank 7: [0.7889] [x] "What is the future of machine learning?"
+  Rank 8: [0.7855] [DUPLICATE] "How do I master machine learning?"
+  Rank 9: [0.7791] [x] "How much time to learn machine learning?"
+  Rank 10: [0.7576] [x] "What are the best machine learning books?"
+
+--- STAGE 2: Cross-Encoder Reranking ---
+  Rank 1: [0.9999] [DUPLICATE] "How do I master machine learning?"
+  Rank 2: [0.9999] [x] "How much time to learn machine learning?"
+  Rank 3: [0.9948] [x] "How to find a job in machine learning?"
+  Rank 4: [0.9836] [x] "How do I get a job in machine learning?"
+  Rank 5: [0.9739] [x] "What are the drawbacks of machine learning?"
+  Rank 6: [0.5136] [x] "Is machine learning worth learning?"
+  Rank 7: [0.0003] [x] "What is the future of machine learning?"
+  Rank 8: [0.0002] [x] "What are the best machine learning books?"
+  Rank 9: [0.0002] [x] "Which machine learning certifications should I get?"
+  Rank 10: [0.0001] [x] "What are the top machine learning frameworks?"
+
+  >> Duplicate was at rank 8 after retrieval, moved to rank 1 after reranking
+  >> IMPROVED by 7 positions!
+
+================================================================================
+QUERY 5: "What certifications are available for piano?"
+================================================================================
+
+GROUND TRUTH DUPLICATES (1):
+  [RELEVANT] "Which piano certifications should I get?"
+
+--- STAGE 1: TF-IDF Retrieval (Top 10) ---
+  Rank 1: [1.0000] [DUPLICATE] "Which piano certifications should I get?"
+  Rank 2: [0.5731] [x] "How do I get a job in piano?"
+  Rank 3: [0.5731] [x] "How to find a job in piano?"
+  Rank 4: [0.5360] [x] "What are the drawbacks of piano?"
+  Rank 5: [0.5360] [x] "What is the future of piano?"
+  Rank 6: [0.5360] [x] "What are the top piano frameworks?"
+  Rank 7: [0.5331] [x] "How do I master piano?"
+  Rank 8: [0.5278] [x] "How much time to learn piano?"
+  Rank 9: [0.5102] [x] "What are the best piano books?"
+  Rank 10: [0.4980] [x] "Should I learn piano in 2025?"
+
+--- STAGE 2: Cross-Encoder Reranking ---
+  Rank 1: [0.9999] [DUPLICATE] "Which piano certifications should I get?"
+  Rank 2: [0.0002] [x] "What are the drawbacks of piano?"
+  Rank 3: [0.0002] [x] "How do I master piano?"
+  Rank 4: [0.0002] [x] "What are the top piano frameworks?"
+  Rank 5: [0.0001] [x] "What are the best piano books?"
+  Rank 6: [0.0001] [x] "What is the future of piano?"
+  Rank 7: [0.0001] [x] "How to find a job in piano?"
+  Rank 8: [0.0001] [x] "Should I learn piano in 2025?"
+  Rank 9: [0.0001] [x] "How much time to learn piano?"
+  Rank 10: [0.0001] [x] "How do I get a job in piano?"
+
+  >> Duplicate was at rank 1 after retrieval, moved to rank 1 after reranking
+  >> Same position (already correct)
+
+================================================================================
+DONE - These are real examples from your test set!
+================================================================================
